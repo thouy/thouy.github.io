@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ETC on KMS Dev log</title>
+    <link>https://thouy.github.io/posts/etc/</link>
+    <description>Recent content in ETC on KMS Dev log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jan 2023 10:21:50 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[OS] 스레드(Thread)</title>
+      <link>https://thouy.github.io/posts/etc/thread/</link>
+      <pubDate>Thu, 19 Jan 2023 10:21:50 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/etc/thread/</guid>
+      <description>
+        
+          
+            개요 스레드는 어떠한 프로그램 내에서, 특히 프로세스 내에서 실행되는 흐름의 단위를 말합니다. 일반적으로 프로그램은 하나의 스레드를 가지지만, 프로그램에 따라서 둘 이상의 스레드를 동시에 실행할 수도 있습니다. 이러한 방식을 멀티스레드(Multithread) 라고 합니다.
+웹서버의 멀티스레드 예시 Dispatcher 스레드가 네트워크를 통해 외부에서 전송된 리퀘스트(request)를 읽어옵니다. 리퀘스트를 읽어온 후에, Worker 스레드를 깨워 리퀘스트를 처리하도록 합니다. Worker 스레드가 깨어나면 리퀘스트가 웹 페이지 캐시로 처리가 가능한지 확인합니다. 만약 캐시로 처리할 수 없는 리퀘스트라면 디스크에서 필요한 데이터를 로드하게 되는데, 디스크 작업이 완료될 때까지 Worker 스레드는 block 됩니다.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,6 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://thouy.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ETC</title>
+      <link>https://thouy.github.io/posts/etc/</link>
+      <pubDate>Thu, 19 Jan 2023 10:21:50 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/etc/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Golang</title>
       <link>https://thouy.github.io/posts/golang/</link>
       <pubDate>Wed, 18 Jan 2023 17:00:16 +0900</pubDate>

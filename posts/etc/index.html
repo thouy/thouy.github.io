@@ -4,40 +4,36 @@
   lang="en"
   data-figures=""
   
-    class="page"
-  
   
   >
   <head>
-<title>[Golang] Goroutine VS Thread | KMS Dev log</title>
+<title>ETC | KMS Dev log</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
 
+  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="고루틴(Goroutine)은 Go 런타임이 관리하는 경량쓰레드입니다. 이번 포스팅에서는 OS 레벨의 쓰레드와 고루틴이 어떠한 차이가 있는지 살펴보고자 합니다.
-[OS] 스레드(Thread)
-메모리 점유 측면 고루틴은 생성 시 약 2KB의 스택 메모리 공간을 소모합니다. 필요에 따라 힙  …" />
+<meta name="description" content="" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="[Golang] Goroutine VS Thread" />
+<meta name="twitter:title" content="ETC" />
 <meta name="twitter:image" content="https://thouy.github.io/"/>
-<meta property="og:url" content="https://thouy.github.io/posts/golang/goroutine_versus_thread/" />
-<meta property="og:title" content="[Golang] Goroutine VS Thread" />
-<meta property="og:description" content="고루틴(Goroutine)은 Go 런타임이 관리하는 경량쓰레드입니다. 이번 포스팅에서는 OS 레벨의 쓰레드와 고루틴이 어떠한 차이가 있는지 살펴보고자 합니다.
-[OS] 스레드(Thread)
-메모리 점유 측면 고루틴은 생성 시 약 2KB의 스택 메모리 공간을 소모합니다. 필요에 따라 힙  …" />
+<meta property="og:url" content="https://thouy.github.io/posts/etc/" />
+<meta property="og:title" content="ETC" />
+<meta property="og:description" content="" />
 <meta property="og:image" content="https://thouy.github.io/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://thouy.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thouy.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://thouy.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://thouy.github.io/posts/golang/goroutine_versus_thread/">
+<link rel="canonical" href="https://thouy.github.io/posts/etc/">
+<link rel="alternate" type="application/rss+xml" href="https://thouy.github.io/posts/etc/index.xml" title="KMS Dev log" />
 
 
 
@@ -124,10 +120,19 @@
 </header>
 
     <main>
-  
+
+
+
 <div class="grid-inverse wrap content">
-  <article class="post_content">
-    <h1 class="post_title">[Golang] Goroutine VS Thread</h1>
+  <div>
+    <ul class="posts" id="posts">
+        <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
+        <a href="https://thouy.github.io/posts/etc/thread/" title="[OS] 스레드(Thread)">[OS] 스레드(Thread)</a>
+      </h3>
+      
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -135,19 +140,19 @@
 </svg>
 </span>
     <span class="post_date">
-      Jan 18, 2023</span>
-    <span class="post_time"> · 1 min read</span>
+      Jan 19, 2023</span>
+    <span class="post_time"> · 2 min read</span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     Share on:
-    <a href="https://twitter.com/intent/tweet?text=%5bGolang%5d%20Goroutine%20VS%20Thread&url=https%3a%2f%2fthouy.github.io%2fposts%2fgolang%2fgoroutine_versus_thread%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=%5bOS%5d%20%ec%8a%a4%eb%a0%88%eb%93%9c%28Thread%29&url=https%3a%2f%2fthouy.github.io%2fposts%2fetc%2fthread%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <title>twitter</title>
   <use xlink:href="#twitter"></use>
 </svg>
 
     </a>
-    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fthouy.github.io%2fposts%2fgolang%2fgoroutine_versus_thread%2f&t=%5bGolang%5d%20Goroutine%20VS%20Thread" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fthouy.github.io%2fposts%2fetc%2fthread%2f&t=%5bOS%5d%20%ec%8a%a4%eb%a0%88%eb%93%9c%28Thread%29" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
       <svg class="icon">
   <title>facebook</title>
   <use xlink:href="#facebook"></use>
@@ -161,7 +166,7 @@
 </svg>
 
     </a>
-    <a href="https://thouy.github.io/posts/golang/goroutine_versus_thread/" title="Copy Link" class="link link_yank">
+    <a href="https://thouy.github.io/posts/etc/thread/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <title>copy</title>
   <use xlink:href="#copy"></use>
@@ -172,38 +177,24 @@
   </span>
   </div>
 
-    <div class="post_body"><p>고루틴(Goroutine)은 Go 런타임이 관리하는 경량쓰레드입니다. 이번 포스팅에서는 OS 레벨의 쓰레드와 고루틴이 어떠한 차이가 있는지 살펴보고자 합니다.</p>
-<blockquote>
-<p><a href="/posts/etc/thread/">[OS] 스레드(Thread)</a></p>
-</blockquote>
-<h3 id="메모리-점유-측면">메모리 점유 측면</h3>
-<ul>
-<li>고루틴은 생성 시 약 2KB의 스택 메모리 공간을 소모합니다. 필요에 따라 힙 메모리를 사용하기도 합니다.</li>
-<li>쓰레드는 쓰레드가 사용할 메모리 공간과 더불어 Guard Page로 불리는 쓰레드와 쓰레드 사이의 메모리 공간까지 포함하기 때문에 약 1MB의 메모리 공간을 소모합니다. 때문에 쓰레드를 생성하면 할수록 가용 힙 메모리 공간이 계속 줄어드는 문제점이 있습니다.</li>
-</ul>
-<h3 id="생성-및-소거-비용-측면">생성 및 소거 비용 측면</h3>
-<ul>
-<li>고루틴은 Go 런타임이 논리적으로 생성하고 소거되므로 생성/소거에 드는 비용이 저렴합니다.</li>
-<li>쓰레드는 OS로부터 생성에 필요한 리소스 요청을 통해 생성합니다. 쓰레드 작업이 완료되면 해당 리소스를 다시 OS에 반환해야 합니다. 이 과정이 많은 비용을 요구합니다. 이런 문제를 해소하기 위해 쓰레드 풀을 사용하기도 합니다.</li>
-</ul>
-<h3 id="context-switching-비용">Context Switching 비용</h3>
-<ul>
-<li>Context Switching(문맥 교환)은 현재 진행중인 Task(프로세스나 쓰레드)의 상태를 저장하고 다음 진행할 Task의 상태를 읽어 적용하는 과정을 말합니다.</li>
-<li>쓰레드가 교체되어 Context Switching이 진행되면 16개의 범용 레지스터, PC(Program Counter), SP(Stack Pointer), Segment 레지스터 등에서 save/restore 작업이 진행됩니다. 이 같은 작업을 처리하기 때문에 Context Switching 시 많은 비용을 소모하게 됩니다.</li>
-<li>고루틴은 3개의 레지스터(PC, SP, DX)만 save/restore 작업을 처리하기 때문에 상대적으로 쓰레드보다 적은 비용을 소모합니다.</li>
-</ul>
-
     </div>
-<div class="post_comments">
-  
-  
-  
-</div>
+      <div class="excerpt_footer">
+        <div class="pale">
+          
+            <p>개요 스레드는 어떠한 프로그램 내에서, 특히 프로세스 내에서 실행되는 흐름의 단위를 말합니다. 일반적으로 프로그램은 하나의 스레드를 가지지만, 프로그램에 따라서 둘 이상의 스레드를 동시에 실행할 수도 있습니다. 이러한 방식을 멀티스레드(Multithread) 라고 합니다.
+웹서버의 멀티스레드 예시 Dispatcher 스레드가 네트워크를 통해 외부에서 전송된 리퀘스트(request)를 읽어옵니다. 리퀘스트를 읽어온 후에, Worker 스레드를 깨워 리퀘스트를 처리하도록 합니다. Worker 스레드가 깨어나면 리퀘스트가 웹 페이지 캐시로 처리가 가능한지 확인합니다. …</p>
+          
+          <br>
+          <a href="https://thouy.github.io/posts/etc/thread/" title="Read More" class="excerpt_more button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </li>
 
-
-
-
-  </article>
+      <li>
+      </li>
+    </ul>
+  </div>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
@@ -256,8 +247,9 @@
   </section>
 </aside>
 
-  
 </div>
+
+
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
