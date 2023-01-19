@@ -6,5 +6,33 @@
     <description>Recent content in index on KMS Dev log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://thouy.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang</title>
+      <link>https://thouy.github.io/posts/golang/</link>
+      <pubDate>Wed, 18 Jan 2023 17:00:16 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/golang/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://thouy.github.io/posts/javascript/</link>
+      <pubDate>Wed, 18 Jan 2023 15:48:59 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/javascript/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

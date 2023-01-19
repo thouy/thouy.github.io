@@ -2,17 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thouy.github.io/categories/</loc>
+    <loc>https://thouy.github.io/posts/golang/goroutine_versus_thread/</loc>
+    <lastmod>2023-01-18T17:00:16+09:00</lastmod>
   </url><url>
     <loc>https://thouy.github.io/posts/golang/</loc>
-  </url><url>
-    <loc>https://thouy.github.io/tags/index/</loc>
-  </url><url>
-    <loc>https://thouy.github.io/posts/javascript/</loc>
+    <lastmod>2023-01-18T17:00:16+09:00</lastmod>
   </url><url>
     <loc>https://thouy.github.io/</loc>
+    <lastmod>2023-01-18T17:00:16+09:00</lastmod>
   </url><url>
     <loc>https://thouy.github.io/posts/</loc>
+    <lastmod>2023-01-18T17:00:16+09:00</lastmod>
+  </url><url>
+    <loc>https://thouy.github.io/posts/golang/goroutine_and_channel/</loc>
+    <lastmod>2023-01-18T16:58:59+09:00</lastmod>
+  </url><url>
+    <loc>https://thouy.github.io/posts/javascript/hoisting/</loc>
+    <lastmod>2023-01-18T15:48:59+09:00</lastmod>
+  </url><url>
+    <loc>https://thouy.github.io/posts/javascript/</loc>
+    <lastmod>2023-01-18T15:48:59+09:00</lastmod>
+  </url><url>
+    <loc>https://thouy.github.io/posts/test1/</loc>
+    <lastmod>2023-01-18T15:34:49+09:00</lastmod>
+  </url><url>
+    <loc>https://thouy.github.io/categories/</loc>
+  </url><url>
+    <loc>https://thouy.github.io/tags/index/</loc>
   </url><url>
     <loc>https://thouy.github.io/series/</loc>
   </url><url>
