@@ -6,7 +6,26 @@
     <description>Recent content in ETC on KMS Dev log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jan 2023 10:21:50 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/etc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Jan 2023 11:55:29 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo로 Github 블로그 생성하기</title>
+      <link>https://thouy.github.io/posts/etc/hugo_github_blog/</link>
+      <pubDate>Thu, 19 Jan 2023 11:55:29 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/etc/hugo_github_blog/</guid>
+      <description>
+        
+          
+            개요 Hugo로 Github 블로그를 생성하는 내용을 소개하고자 합니다. Ubuntu 20.04.5 LTS 환경에서 진행했습니다.
+준비물 Go 1.18 버전 이상 gcc 컴파일러 블로그 파일을 업로드할 Github 레퍼지토리 (레퍼지토리 이름은 Github_유저명.github.io 형태로 지정해주세요) 설치 1. Hugo 소스 빌드하기 Github에서 Hugo 소스코드를 clone 받아서 go로 빌드합니다.
+1$ go install -tags extended github.com/gohugoio/hugo@latest 2$ hugo version hugo version 명령으로 버전 내용이 잘 출력되면 Hugo 설치는 마무리 됩니다.
+2. Hugo로 블로그 프로젝트 생성하기 hugo 명령으로 새로운 site를 생성합니다.
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>[OS] 스레드(Thread)</title>
       <link>https://thouy.github.io/posts/etc/thread/</link>
