@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on KMS Dev log</title>
-    <link>http://example.org/posts/</link>
+    <link>https://thouy.github.io/posts/</link>
     <description>Recent content in Posts on KMS Dev log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://thouy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
