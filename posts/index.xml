@@ -6,22 +6,6 @@
     <description>Recent content in Posts on KMS Dev log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jan 2023 11:55:29 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Test1</title>
-      <link>https://thouy.github.io/posts/test1/</link>
-      <pubDate>Wed, 18 Jan 2023 15:34:49 +0900</pubDate>
-      
-      <guid>https://thouy.github.io/posts/test1/</guid>
-      <description>
-        
-          
-            Hello world 
-          
-          
-        
-      </description>
-    </item>
-    
+    <lastBuildDate>Thu, 19 Jan 2023 12:25:12 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

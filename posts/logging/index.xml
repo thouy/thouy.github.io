@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logging on KMS Dev log</title>
+    <link>https://thouy.github.io/posts/logging/</link>
+    <description>Recent content in Logging on KMS Dev log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jan 2023 12:25:12 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/logging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fluentd &#43; OpenSearch 로그 모니터링 시스템 구축기</title>
+      <link>https://thouy.github.io/posts/logging/fluentd_opensearch_log_monitoring/</link>
+      <pubDate>Thu, 19 Jan 2023 12:25:12 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/logging/fluentd_opensearch_log_monitoring/</guid>
+      <description>
+        
+          
+            개요 Fluentd + OpenSearch를 결합하여 syslog를 수집하는 시스템을 구축하는 내용에 대한 기록입니다.
+준비물 Ubuntu 20.04.5 LTS Fluentd가 설치된 환경 (버전 : v1.15.3) OpenSearch가 설치된 환경 (버전 : v2.4.1) 시스템 관련 디렉토리 정보 타켓 로그파일 : /var/log/syslog (rsyslog 데몬의 설정을 참고합니다. /etc/rsyslog.d/50-default.conf) Fluentd 설정파일 : /etc/fluentd/fluent.conf Fluentd 로그 관리용 디렉토리 : /var/log/fluentd 로그 파싱 전략 (syslog 한정) 로그 파싱은 Grok pattern을 활용합니다. syslog 구조 파악 시간, 호스트명, 프로세스명, 프로세스 아이디, 로그 본문으로 구분할 수 있습니다.
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Fluentd Install</title>
+      <link>https://thouy.github.io/posts/logging/fluentd_install/</link>
+      <pubDate>Thu, 19 Jan 2023 12:24:02 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/logging/fluentd_install/</guid>
+      <description>
+        
+          
+            개요 Fluentd는 오픈소스 기반의 Data collector이자 aggregator 입니다. Fluentd를 설치하는 방법은 td-agent 패키지를 이용해서 설치하는 방법과 소스를 직접 빌드하여 설치하는 방법이 있습니다. 본 글에서는 소스를 직접 빌드하여 Fluentd를 설치했던 과정을 다룹니다. 직접 설치했던 경험을 기반으로 작성되었습니다. 이 글이 Fluentd를 standalone으로 설치하시려는 분들에게 도움이 되셨으면 합니다. 설치 환경은 Ubuntu 20.04.5 LTS 입니다.
+준비물 Ruby source code archieve (v3.2.0) Fluentd source code archieve (v1.15.3) 설치 1. Ruby 설치 루비는 Fluentd 소스를 빌드하기 위해 필요하기 때문에 먼저 루비를 장비에 설치해야 합니다.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

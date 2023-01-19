@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on KMS Dev log</title>
+    <link>https://thouy.github.io/posts/web/</link>
+    <description>Recent content in Web on KMS Dev log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jan 2023 12:23:09 +0900</lastBuildDate><atom:link href="https://thouy.github.io/posts/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Websocket</title>
+      <link>https://thouy.github.io/posts/web/websocket/</link>
+      <pubDate>Thu, 19 Jan 2023 12:23:09 +0900</pubDate>
+      
+      <guid>https://thouy.github.io/posts/web/websocket/</guid>
+      <description>
+        
+          
+            등장배경 과거에는 클라이언트-서버간 양방향 통신이 필요한 웹 애플리케이션을 만들기 위해서는, HTTP가 남용될 수 밖에 없었습니다. 왜냐하면 upstream, downstream을 별도의 HTTP 연결로 전송해야 했기 때문입니다. 이로 인해 다양한 문제들이 발생하게 됩니다.
+서버는 클라이언트별로 복수 개의 TCP 연결을 사용해야만 합니다. (하나는 클라이언트로 메세지를 보내기 위한 연결, 다른 하나는 upstream을 받기위한 연결) 결국 높은 오버헤드를 발생시키게 됩니다. 클라이언트는 서버로부터 온 메세지에 대한 응답을 위해서 서버와의 커넥션을 유지 및 관리해야 합니다. 이러한 문제를 해소하기 위해 WebSocket 프로토콜이 등장합니다.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

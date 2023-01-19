@@ -4,10 +4,12 @@
   lang="en"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Series | KMS Dev log</title>
+<title>Fluentd Install | KMS Dev log</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,22 +19,21 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="개요 Fluentd는 오픈소스 기반의 Data collector이자 aggregator 입니다. Fluentd를 설치하는 방법은 td-agent 패키지를 이용해서 설치하는 방법과 소스를 직접 빌드하여 설치하는 방법이 있습니다. 본 글에서는 소스를 직접 빌드하여 Fluentd를 설치했던  …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Series" />
+<meta name="twitter:title" content="Fluentd Install" />
 <meta name="twitter:image" content="https://thouy.github.io/"/>
-<meta property="og:url" content="https://thouy.github.io/series/" />
-<meta property="og:title" content="Series" />
-<meta property="og:description" content="" />
+<meta property="og:url" content="https://thouy.github.io/posts/logging/fluentd_install/" />
+<meta property="og:title" content="Fluentd Install" />
+<meta property="og:description" content="개요 Fluentd는 오픈소스 기반의 Data collector이자 aggregator 입니다. Fluentd를 설치하는 방법은 td-agent 패키지를 이용해서 설치하는 방법과 소스를 직접 빌드하여 설치하는 방법이 있습니다. 본 글에서는 소스를 직접 빌드하여 Fluentd를 설치했던  …" />
 <meta property="og:image" content="https://thouy.github.io/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://thouy.github.io/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://thouy.github.io/icons/favicon-32x32.png">
 <link rel="manifest" href="https://thouy.github.io/icons/site.webmanifest">
 
-<link rel="canonical" href="https://thouy.github.io/series/">
-<link rel="alternate" type="application/rss+xml" href="https://thouy.github.io/series/index.xml" title="KMS Dev log" />
+<link rel="canonical" href="https://thouy.github.io/posts/logging/fluentd_install/">
 
 
 
@@ -119,23 +120,197 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-      <li>
-      </li>
-    </ul>
+  <article class="post_content">
+    <h1 class="post_title">Fluentd Install</h1>
+  <div class="post_meta">
+    <span><svg class="icon">
+  <title>calendar</title>
+  <use xlink:href="#calendar"></use>
+</svg>
+</span>
+    <span class="post_date">
+      Jan 19, 2023</span>
+    <span class="post_time"> · 3 min read</span>
+    <span class="page_only">&nbsp;·
+  <div class="post_share">
+    Share on:
+    <a href="https://twitter.com/intent/tweet?text=Fluentd%20Install&url=https%3a%2f%2fthouy.github.io%2fposts%2flogging%2ffluentd_install%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+      <svg class="icon">
+  <title>twitter</title>
+  <use xlink:href="#twitter"></use>
+</svg>
+
+    </a>
+    <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fthouy.github.io%2fposts%2flogging%2ffluentd_install%2f&t=Fluentd%20Install" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+      <svg class="icon">
+  <title>facebook</title>
+  <use xlink:href="#facebook"></use>
+</svg>
+
+    </a>
+    <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow">
+      <svg class="icon">
+  <title>linkedin</title>
+  <use xlink:href="#linkedin"></use>
+</svg>
+
+    </a>
+    <a href="https://thouy.github.io/posts/logging/fluentd_install/" title="Copy Link" class="link link_yank">
+      <svg class="icon">
+  <title>copy</title>
+  <use xlink:href="#copy"></use>
+</svg>
+
+    </a>
   </div>
+  </span>
+  </div>
+
+    <div class="post_body"><h3 id="개요">개요</h3>
+<p>Fluentd는 오픈소스 기반의 Data collector이자 aggregator 입니다.
+Fluentd를 설치하는 방법은 td-agent 패키지를 이용해서 설치하는 방법과 소스를 직접 빌드하여 설치하는 방법이 있습니다.
+본 글에서는 소스를 직접 빌드하여 Fluentd를 설치했던 과정을 다룹니다. 직접 설치했던 경험을 기반으로 작성되었습니다. 이 글이 Fluentd를 standalone으로 설치하시려는 분들에게 도움이 되셨으면 합니다. 설치 환경은 Ubuntu 20.04.5 LTS 입니다.</p>
+<h3 id="준비물">준비물</h3>
+<ul>
+<li>Ruby source code archieve (v3.2.0)</li>
+<li>Fluentd source code archieve (v1.15.3)</li>
+</ul>
+<h3 id="설치">설치</h3>
+<h4 id="1-ruby-설치">1. Ruby 설치</h4>
+<p>루비는 Fluentd 소스를 빌드하기 위해 필요하기 때문에 먼저 루비를 장비에 설치해야 합니다. 루비 설치 전 패키지 최신 목록을 업데이트한 후 다음의 패키지들이 설치되었는지 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo apt-get update
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ sudo apt-get upgrade
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ sudo apt-get install gcc, make, autoconf, bison, gperf, build-essential, libssl-dev, libreadline-dev, libffi-dev, zlib1g, zlib1g-dev
+</span></span></code></pre></div><p>아래 명령으로 루비 소스코드 아카이브를 내려받은 후에 압축을 해제합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ wget https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.0.tar.gz
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ tar xvzf ruby-3.2.0.tar.gz
+</span></span></code></pre></div><p>압축이 해제된 루비 디렉토리로 이동하여 configure 스크립트를 실행합니다.</p>
+<ul>
+<li>prefix 옵션을 추가하면 루비가 설치될 경로를 지정할 수 있으며 지정하지 않으면 기본으로 /usr/local이 설정됩니다.</li>
+<li>disable-install-doc 옵션을 추가하면 루비 document 빌드 과정이 생략되기 때문에 좀 더 신속하게 루비를 설치할 수 있습니다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ ./configure --prefix<span class="o">=</span>/usr/local --disable-install-doc
+</span></span></code></pre></div><p>configure 스크립트 실행이 끝나면 make 명령으로 루비 소스를 빌드합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ make
+</span></span></code></pre></div><blockquote>
+<p>빌드 과정에서 오류가 발생하면 ruby 디렉토리를 삭제한 후 다시 세팅해서 configure 절차부터 재시도 하는 것을 권장합니다.</p>
+</blockquote>
+<p>make 빌드가 오류없이 완료되면 아래 명령으로 빌드한 루비를 설치합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo make install
+</span></span></code></pre></div><p>설치가 오류없이 완료되면 최종적으로 루비 명령을 실행하여 정상 동작 여부를 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ ruby --version
+</span></span></code></pre></div><h4 id="2-fluentd-설치">2. Fluentd 설치</h4>
+<p>Fluentd 소스코드를 github에서 clone 받습니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ git clone -b v1.15.3 https://github.com/fluent/fluentd.git
+</span></span></code></pre></div><p>클론 받은 소스코드 디렉토리로 이동한 후 bundle install 명령으로 Fluentd 소스에 필요한 RubyGem들을 세팅합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ <span class="nb">cd</span> fleuntd
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ bundle install
+</span></span></code></pre></div><p>의존성 세팅이 완료되면 아래의 명령으로 소스를 빌드합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ bundle <span class="nb">exec</span> rake build
+</span></span></code></pre></div><p>빌드가 성공하면 pkg 디렉토리에 gem 파일이 생성됩니다. 이 gem을 아래 명령으로 설치합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo gem install pkg/fluentd-v1.15.3.gem
+</span></span></code></pre></div><p>gem 설치가 끝나면 Fluentd 설치는 마무리 됩니다. 아래의 명령으로 Fluentd 설정 파일을 생성해줍니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ fluentd --setup /etc/fluent
+</span></span></code></pre></div><p>마지막으로 아래 명령으로 Fluentd를 실행하여 정상 동작하는지 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ fluentd -c /etc/fluent/fluentd.conf -vv <span class="p">&amp;</span>
+</span></span></code></pre></div><p>Fluentd를 종료하려면 pkill 명령으로 종료시킬 수 있습니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo pkill -f fluentd
+</span></span></code></pre></div><h3 id="설치-이후-작업">설치 이후 작업</h3>
+<h4 id="1-systemd에-fluentd-서비스-등록하기optional">1. systemd에 Fluentd 서비스 등록하기(Optional)</h4>
+<p>Fluentd를 systemd 데몬으로 관리되는 서비스로 추가하기 위한 작업입니다. 필수 절차는 아니며 선택사항 입니다.</p>
+<p>fluentd 유저를 생성해서 시스템 유저로 등록합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo adduser --system --shell /bin/bash --no-create-home fluentd
+</span></span></code></pre></div><p>fluentd 그룹을 생성합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo addgroup --group fluentd
+</span></span></code></pre></div><p>fleuntd 유저를 fluentd 그룹에 추가합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo usermod -aG fluentd fluentd
+</span></span></code></pre></div><p>Fluentd 워킹디렉토리의 소유를 fleuntd 유저와 그룹으로 변경합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo chown -R fluentd:fluentd /etc/fluentd
+</span></span></code></pre></div><p>Fluentd 로깅디렉토리를 만들고 소유를 fluentd 유저와 그룹으로 변경합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo mkdir /var/log/fluentd
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ sudo chown -R fluentd:fluentd /var/log/fluentd
+</span></span></code></pre></div><p>Fluentd 서비스 등록을 위해 systemd 스크립트를 작성합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo vi /etc/systemd/system/fluentd.service
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="p">[</span><span class="nx">Unit</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nx">Description</span><span class="p">=</span><span class="nx">Fluentd</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nx">Documentation</span><span class="p">=</span><span class="nx">http</span><span class="err">://</span><span class="nx">www</span><span class="p">.</span><span class="nx">fluentd</span><span class="p">.</span><span class="nx">org</span><span class="err">/</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nx">Wants</span><span class="p">=</span><span class="nx">network-online-target</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nx">After</span><span class="p">=</span><span class="nx">network-online-target</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">[</span><span class="nx">Service</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nx">Type</span><span class="p">=</span><span class="nx">forking</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nx">RuntimeDirectory</span><span class="p">=</span><span class="nx">data</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nx">WorkingDirectory</span><span class="p">=</span><span class="err">/</span><span class="nx">etc</span><span class="err">/</span><span class="nx">fleuntd</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nx">ExecStart</span><span class="p">=</span><span class="err">/</span><span class="nx">usr</span><span class="err">/</span><span class="nx">local</span><span class="err">/</span><span class="nx">bin</span><span class="err">/</span><span class="nx">fluentd</span> <span class="nx">-c</span> <span class="err">/</span><span class="nx">etc</span><span class="err">/</span><span class="nx">fluentd</span><span class="err">/</span><span class="nx">fluent</span><span class="p">.</span><span class="nx">conf</span> <span class="nx">-o</span> <span class="err">/</span><span class="nx">var</span><span class="err">/</span><span class="nx">log</span><span class="err">/</span><span class="nx">fluentd</span><span class="err">/</span><span class="nx">fluent</span><span class="p">.</span><span class="nx">log</span> <span class="nx">-d</span> <span class="err">/</span><span class="nx">etc</span><span class="err">/</span><span class="nx">fluentd</span><span class="err">/</span><span class="nx">fluent</span><span class="p">.</span><span class="nx">pid</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nx">User</span><span class="p">=</span><span class="nx">fluentd</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nx">Group</span><span class="p">=</span><span class="nx">fluentd</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nx">StandardOutput</span><span class="p">=</span><span class="nx">journal</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="nx">StandardError</span><span class="p">=</span><span class="nx">inherit</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nx">TimeoutStartSec</span><span class="p">=</span><span class="mi">75</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nx">TimeoutStopSec</span><span class="p">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="nx">KillSignal</span><span class="p">=</span><span class="nx">SIGTERM</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="nx">KillMode</span><span class="p">=</span><span class="nx">process</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="nx">SendSIGKILL</span><span class="p">=</span><span class="nx">no</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="nx">SuccessExitStatus</span><span class="p">=</span><span class="mi">143</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="p">[</span><span class="nx">Install</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="nx">WantedBy</span><span class="p">=</span><span class="nx">multi-user</span><span class="p">.</span><span class="nx">target</span>
+</span></span></code></pre></div><p>새로 작성한 Fluentd 서비스 스크립트를 systemd 데몬에 반영합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo systemctl daemon-reload
+</span></span></code></pre></div><p>Fluentd 서비스를 활성화 합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ sudo systemctl enable fluentd.service
+</span></span></code></pre></div><p>이제 Fluentd 서비스를 systemctl로 시작할 수 있습니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">$ sudo systemctl start fluentd
+</span></span></code></pre></div><p>마지막으로 서비스 시작 후 상태를 조회해보고 정상 동작 여부를 확인합니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">$ sudo systemctl status fluentd
+</span></span></code></pre></div><p><figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      
+        class="image_figure image_external image_processed"
+        width="1748"
+        height="192"
+        src="/image_14604896955230506380.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+
+    </div>
+<div class="post_comments">
+  
+  
+  
+</div>
+
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='series'>
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='posts'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -210,9 +385,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
